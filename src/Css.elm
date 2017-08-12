@@ -438,6 +438,7 @@ module Css
         , mm
         , monospace
         , move
+        , ms
         , multiply
         , myanmar
         , nResize
@@ -551,6 +552,7 @@ module Css
         , row
         , rowResize
         , rowReverse
+        , s
         , sResize
         , sansSerif
         , saturation
@@ -650,6 +652,13 @@ module Css
         , transformBox
         , transformStyle
         , transforms
+        , transition
+        , transition2
+        , transition3
+        , transition4
+        , transitionDelay
+        , transitionDuration
+        , transitionProperty
         , translate
         , translate2
         , translate3d
@@ -734,7 +743,7 @@ module Css
 
 # Properties
 
-@docs property, flex, flex2, flex3, medium, alignSelf, alignItems, justifyContent, order, flexDirection, flexFlow1, flexFlow2, flexWrap, flexBasis, flexGrow, flexShrink, transformStyle, transformBox, transform, transforms, currentColor, underline, overline, lineThrough, textOrientation, textDecoration, textDecoration2, textDecoration3, textDecorationLine, textDecorations, textDecorations2, textDecorations3, textDecorationLine, textDecorationLines, textDecorationStyle, textEmphasisColor, capitalize, uppercase, lowercase, fullWidth, hanging, eachLine, textIndent, textIndent2, textIndent3, clip, ellipsis, textOverflow, optimizeSpeed, optimizeLegibility, geometricPrecision, textRendering, textTransform, textAlign, textAlignLast, left, right, center, justify, justifyAll, start, end, matchParent, true, verticalAlign, display, opacity, minContent, maxContent, fitContent, fillAvailable, width, minWidth, maxWidth, height, minHeight, maxHeight, padding, padding2, padding3, padding4, paddingTop, paddingBottom, paddingRight, paddingLeft, paddingBlockStart, paddingBlockEnd, paddingInlineStart, paddingInlineEnd, margin, margin2, margin3, margin4, marginTop, marginBottom, marginRight, marginLeft, marginBlockStart, marginBlockEnd, marginInlineStart, marginInlineEnd, boxSizing, overflow, overflowX, overflowY, overflowWrap, whiteSpace, backgroundColor, color, withMedia, each, media, mediaQuery, textShadow, textShadow2, textShadow3, textShadow4, boxShadow, boxShadow2, boxShadow3, boxShadow4, boxShadow5, boxShadow6, lineHeight, letterSpacing, fontFace, fontFamily, fontSize, fontStyle, fontWeight, fontVariant, fontVariant2, fontVariant3, fontVariantLigatures, fontVariantCaps, fontVariantNumeric, fontVariantNumeric2, fontVariantNumeric3, fontFamilies, fontVariantNumerics, fontFeatureSettings, fontFeatureSettingsList, cursor, outline, outline3, outlineColor, outlineWidth, outlineStyle, outlineOffset, zIndex, spaceAround, spaceBetween, resize, fill, touchAction
+@docs property, flex, flex2, flex3, medium, alignSelf, alignItems, justifyContent, order, flexDirection, flexFlow1, flexFlow2, flexWrap, flexBasis, flexGrow, flexShrink, transformStyle, transformBox, transform, transforms, currentColor, underline, overline, lineThrough, textOrientation, textDecoration, textDecoration2, textDecoration3, textDecorationLine, textDecorations, textDecorations2, textDecorations3, textDecorationLine, textDecorationLines, textDecorationStyle, textEmphasisColor, capitalize, uppercase, lowercase, fullWidth, hanging, eachLine, textIndent, textIndent2, textIndent3, clip, ellipsis, textOverflow, optimizeSpeed, optimizeLegibility, geometricPrecision, textRendering, textTransform, textAlign, textAlignLast, left, right, center, justify, justifyAll, start, end, matchParent, true, verticalAlign, display, opacity, minContent, maxContent, fitContent, fillAvailable, width, minWidth, maxWidth, height, minHeight, maxHeight, padding, padding2, padding3, padding4, paddingTop, paddingBottom, paddingRight, paddingLeft, paddingBlockStart, paddingBlockEnd, paddingInlineStart, paddingInlineEnd, margin, margin2, margin3, margin4, marginTop, marginBottom, marginRight, marginLeft, marginBlockStart, marginBlockEnd, marginInlineStart, marginInlineEnd, boxSizing, overflow, overflowX, overflowY, overflowWrap, whiteSpace, backgroundColor, color, withMedia, each, media, mediaQuery, textShadow, textShadow2, textShadow3, textShadow4, boxShadow, boxShadow2, boxShadow3, boxShadow4, boxShadow5, boxShadow6, lineHeight, letterSpacing, fontFace, fontFamily, fontSize, fontStyle, fontWeight, fontVariant, fontVariant2, fontVariant3, fontVariantLigatures, fontVariantCaps, fontVariantNumeric, fontVariantNumeric2, fontVariantNumeric3, fontFamilies, fontVariantNumerics, fontFeatureSettings, fontFeatureSettingsList, cursor, outline, outline3, outlineColor, outlineWidth, outlineStyle, outlineOffset, zIndex, spaceAround, spaceBetween, resize, fill, touchAction, transition, transition2, transition3, transition4, transitionDelay, transitionDuration, transitionProperty
 
 
 # Values
@@ -744,7 +753,6 @@ module Css
 
 @docs Color all, important, custom, solid, transparent, rgb, rgba, hsl, hsla, hex
 
-
 ## Font values
 
 @docs featureTag, featureTag2, featureOn, featureOff
@@ -752,13 +760,16 @@ module Css
 
 ## Other values
 
-@docs borderCollapse, borderColor, borderColor2, borderColor3, borderColor4, borderBottomLeftRadius, borderBottomLeftRadius2, borderBottomRightRadius, borderBottomRightRadius2, borderTopLeftRadius, borderTopLeftRadius2, borderTopRightRadius, borderTopRightRadius2, borderRadius, borderRadius2, borderRadius3, borderRadius4, borderWidth, borderWidth2, borderWidth3, borderWidth4, borderBottomWidth, borderInlineEndWidth, borderLeftWidth, borderRightWidth, borderTopWidth, borderBlockEndStyle, borderBlockStartStyle, borderInlineEndStyle, borderBottomStyle, borderInlineStartStyle, borderLeftStyle, borderRightStyle, borderTopStyle, borderStyle, borderBlockStartColor, borderBlockEndColor, borderBottomColor, borderInlineStartColor, borderInlineEndColor, borderLeftColor, borderRightColor, borderTopColor, borderBox, contentBox, border, border2, border3, borderTop, borderTop2, borderTop3, borderBottom, borderBottom2, borderBottom3, borderLeft, borderLeft2, borderLeft3, borderRight, borderRight2, borderRight3, borderBlockEnd, borderBlockEnd2, borderBlockEnd3, borderBlockStart, borderBlockStart2, borderBlockStart3, borderInlineEnd, borderInlineEnd2, borderInlineEnd3, borderInlineStart, borderInlineStart2, borderInlineStart3, borderImageOutset, borderImageOutset2, borderImageOutset3, borderImageOutset4, borderImageWidth, borderImageWidth2, borderImageWidth3, borderImageWidth4, scroll, visible, block, inlineBlock, inlineFlex, inline, none, auto, inherit, unset, initial, noWrap, top, static, fixed, sticky, relative, absolute, position, float, bottom, middle, baseline, sub, super, textTop, textBottom, hidden, wavy, dotted, dashed, solid, double, groove, ridge, inset, outset, matrix, matrix3d, perspective, rotate3d, rotateX, rotateY, rotateZ, scale, scale2, scale3d, scaleX, scaleY, skew, skew2, skewX, skewY, translate, translate2, translate3d, translateX, translateY, translateZ, rotate, fillBox, viewBox, flat, preserve3d, content, wrapReverse, wrap, flexStart, flexEnd, stretch, row, rowReverse, column, columnReverse, serif, sansSerif, monospace, cursive, fantasy, xxSmall, xSmall, small, large, xLarge, xxLarge, smaller, larger, normal, italic, oblique, bold, lighter, bolder, smallCaps, allSmallCaps, petiteCaps, allPetiteCaps, unicase, titlingCaps, commonLigatures, noCommonLigatures, discretionaryLigatures, noDiscretionaryLigatures, historicalLigatures, noHistoricalLigatures, contextual, noContextual, liningNums, oldstyleNums, proportionalNums, tabularNums, diagonalFractions, stackedFractions, ordinal, slashedZero, default, pointer, crosshair, contextMenu, help, progress, wait, cell, text, verticalText, cursorAlias, copy, move, noDrop, notAllowed, eResize, nResize, neResize, nwResize, sResize, seResize, swResize, wResize, ewResize, nsResize, neswResize, nwseResize, colResize, rowResize, allScroll, zoomIn, zoomOut, grab, grabbing
+@docs borderCollapse, borderColor, borderColor2, borderColor3, borderColor4, borderBottomLeftRadius, borderBottomLeftRadius2, borderBottomRightRadius, borderBottomRightRadius2, borderTopLeftRadius, borderTopLeftRadius2, borderTopRightRadius, borderTopRightRadius2, borderRadius, borderRadius2, borderRadius3, borderRadius4, borderWidth, borderWidth2, borderWidth3, borderWidth4, borderBottomWidth, borderInlineEndWidth, borderLeftWidth, borderRightWidth, borderTopWidth, borderBlockEndStyle, borderBlockStartStyle, borderInlineEndStyle, borderBottomStyle, borderInlineStartStyle, borderLeftStyle, borderRightStyle, borderTopStyle, borderStyle, borderBlockStartColor, borderBlockEndColor, borderBottomColor, borderInlineStartColor, borderInlineEndColor, borderLeftColor, borderRightColor, borderTopColor, borderBox, contentBox, border, border2, border3, borderTop, borderTop2, borderTop3, borderBottom, borderBottom2, borderBottom3, borderLeft, borderLeft2, borderLeft3, borderRight, borderRight2, borderRight3, borderBlockEnd, borderBlockEnd2, borderBlockEnd3, borderBlockStart, borderBlockStart2, borderBlockStart3, borderInlineEnd, borderInlineEnd2, borderInlineEnd3, borderInlineStart, borderInlineStart2, borderInlineStart3, borderImageOutset, borderImageOutset2, borderImageOutset3, borderImageOutset4, borderImageWidth, borderImageWidth2, borderImageWidth3, borderImageWidth4, scroll, visible, block, inlineBlock, inlineFlex, inline, none, auto, inherit, unset, initial, noWrap, top, static, fixed, sticky, relative, absolute, position, float, bottom, middle, baseline, sub, super, textTop, textBottom, hidden, wavy, dotted, dashed, solid, double, groove, ridge, inset, outset, matrix, matrix3d, perspective, rotate3d, rotateX, rotateY, rotateZ, scale, scale2, scale3d, scaleX, scaleY, skew, skew2, skewX, skewY, translate, translate2, translate3d, translateX, translateY, translateZ, rotate, fillBox, viewBox, flat, preserve3d, content, wrapReverse, wrap, flexStart, flexEnd, stretch, row, rowReverse, column, columnReverse, serif, sansSerif, monospace, cursive, fantasy, xxSmall, xSmall, small, large, xLarge, xxLarge, smaller, larger, normal, italic, oblique, bold, lighter, bolder, smallCaps, allSmallCaps, petiteCaps, allPetiteCaps, unicase, titlingCaps, commonLigatures, noCommonLigatures, discretionaryLigatures, noDiscretionaryLigatures, historicalLigatures, noHistoricalLigatures, contextual, noContextual, liningNums, oldstyleNums, proportionalNums, tabularNums, diagonalFractions, stackedFractions, ordinal, slashedZero, default, pointer, crosshair, contextMenu, help, progress, wait, cell, text, verticalText, cursorAlias, copy, move, noDrop, notAllowed, eResize, nResize, neResize, nwResize, sResize, seResize, swResize, wResize, ewResize, nsResize, neswResize, nwseResize, colResize, rowResize, allScroll, zoomIn, zoomOut, grab, grabbing, all, ease, easeIn, easeOut, easeInOut, linear, stepStart, stepEnd
 
 
 # Length
 
 @docs Length, pct, px, em, pt, ex, ch, rem, vh, vw, vmin, vmax, mm, cm, inches, pc, int, num, zero, (|+|), (|-|), (|*|), (|/|), calc, plus, minus
 
+## Time
+
+@docs s, ms
 
 # Length Units
 
@@ -1240,6 +1251,18 @@ type alias Length compatible units =
     }
 
 
+{-| <https://developer.mozilla.org/en-US/docs/Web/CSS/time>
+ -}
+type alias Time compatible units =
+    { compatible
+        | value : String
+        , time : Compatible
+        , numericValue : Float
+        , units : units
+        , unitLabel : String
+    }
+
+
 {-| <https://developer.mozilla.org/en/docs/Web/CSS/calc>
 -}
 type alias Calc compatible =
@@ -1458,7 +1481,6 @@ type alias LengthOrNone compatible =
 type alias LengthOrNumber compatible =
     { compatible | value : String, lengthOrNumber : Compatible }
 
-
 {-| -}
 type alias ExplicitLength units =
     { value : String
@@ -1479,6 +1501,14 @@ type alias ExplicitLength units =
     , calc : Compatible
     }
 
+{-| -}
+type alias ExplicitTime units =
+    { value : String
+    , numericValue : Float
+    , units : units
+    , unitLabel : String
+    , time : Compatible
+    }
 
 {-| <https://developer.mozilla.org/en-US/docs/Web/CSS/transform#Values>
 -}
@@ -2551,6 +2581,18 @@ true =
     prop1 "true"
 
 
+{- TIMES -}
+
+
+timeConverter : units -> String -> Float -> ExplicitTime units
+timeConverter units unitLabel numericValue =
+    { value = numberToString numericValue ++ unitLabel
+    , numericValue = numericValue
+    , units = units
+    , unitLabel = unitLabel
+    , time = Compatible
+    }
+
 
 {- LENGTHS -}
 
@@ -2878,6 +2920,37 @@ pc =
 
 type PcUnits
     = PcUnits
+
+{-| [`s`](https://developer.mozilla.org/en-US/docs/Web/CSS/time#s) units.
+ -}
+type alias Seconds =
+    ExplicitTime SecondUnits
+
+
+{-| [`s`](https://developer.mozilla.org/en-US/docs/Web/CSS/time#s) units.
+-}
+s : Float -> Seconds
+s =
+    timeConverter SecondUnits "s"
+
+
+type SecondUnits
+    = SecondUnits
+
+{-| [`ms`](https://developer.mozilla.org/en-US/docs/Web/CSS/time#ms) units.
+ -}
+type alias Milliseconds =
+    ExplicitTime MillisecondUnits
+
+{-| [`ms`](https://developer.mozilla.org/en-US/docs/Web/CSS/time#ms) units.
+-}
+ms : Float -> Milliseconds
+ms =
+    timeConverter MillisecondUnits "ms"
+
+
+type MillisecondUnits
+    = MillisecondUnits
 
 
 {-| A unitless integer. Useful with properties like [`borderImageOutset`](#borderImageOutset)
@@ -4392,6 +4465,7 @@ none :
     , value : String
     , textTransform : Compatible
     , touchAction : Compatible
+    , transition : Compatible
     }
 none =
     { value = "none"
@@ -4411,6 +4485,7 @@ none =
     , backgroundImage = Compatible
     , textTransform = Compatible
     , touchAction = Compatible
+    , transition = Compatible
     }
 
 
@@ -8529,3 +8604,24 @@ touchAction (auto | none | panX | panLeft | panRight | panY | panUp | panDown | 
 touchAction : TouchAction compatible -> Style
 touchAction =
     prop1 "touch-action"
+
+
+{-| Sets [`transition-duration`](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-duration) property.
+-}
+transitionDuration : Time compatible units -> Style
+transitionDuration =
+    prop1 "transition-duration"
+
+
+{-| Sets [`transition-delay`](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-delay) property.
+ -}
+transitionDelay : Time compatible units -> Style
+transitionDelay =
+    prop1 "transition-delay"
+
+
+{-| Sets [`transition-property`](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-property) property.
+ -}
+transitionProperty : Time compatible units -> Style
+transitionProperty =
+    prop1 "transition-property"

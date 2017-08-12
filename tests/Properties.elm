@@ -603,6 +603,33 @@ all =
             , ( whiteSpace preWrap, "pre-wrap" )
             , ( whiteSpace preLine, "pre-line" )
             ]
+        , testProperty { function = "transition", property = "transition" }
+            [ ( transition inherit, "inherit" )
+            , ( transition initial, "initial" )
+            , ( transition unset, "unset" )
+            , ( transition2 "margin-left" (s 4), "margin-left 4s" )
+            , ( transition3 "margin-left" (s 4) (s 2), "margin-left 4s 1s" )
+            , ( transition3 "margin-left" (s 4) easeInOut, "margin-left 4s ease-in-out" )
+            , ( transition4 "margin-left" (s 4) easeInOut (s 1), "margin-left 4s ease-in-out 1s" )
+            ]
+        , testProperty { function = "transitionDelay", property = "transition-delay" }
+            [ ( transitionDelay inherit, "inherit" )
+            , ( transitionDelay initial, "initial" )
+            , ( tranisitionDelay unset, "unset" )
+            , ( transitionDelay (s 3), "3s")
+            ]
+        , testProperty { function = "transitionDuration", property = "transition-duration" }
+            [ ( transitionDuration inherit, "inherit" )
+            , ( transitionDuration initial, "initial" )
+            , ( tranisitionDuration unset, "unset" )
+            , ( transitionDuration (s 6), "6s")
+            ]
+        , testProperty { function = "transitionProperty", property = "transition-property" }
+            [ ( transitionProperty none, "none" )
+            , ( transitionProperty transitionAll, "all" )
+            , ( transitionProperty unset, "unset" )
+            , ( transitionProperty transitionHeight, "height")
+            ]
         ]
 
 
